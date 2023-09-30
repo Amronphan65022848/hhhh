@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background-color: rgba(228, 242, 245, 1);
+}
+nav{
+    display: flex;
+    width: 100%;
+    background: rgba(92, 192, 248, 0.83);
+    position: relative;
+    justify-content:space-between;
+    text-align: center;
+    padding: 25px 25px;
+    /* height: 100%; */
+}
+nav .icon{
+    font-size: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    
+    
+
+}
+nav ol{
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+}
+nav ol li{
+    margin: 0 2px;
+}
+nav ol li a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 15px 40px;
+}
+
+nav ol li:hover a{
+   /* background: rgb(249, 248, 248); */
+   color: rgb(1, 1, 1);
+}
+
+
+nav ol li a {
+    /* ... โค้ดเดิม ... */
+    text-decoration: none; /* ลบ underline จากลิงก์ */
+    position: relative; /* เพิ่มการตั้งค่า position เพื่อให้สามารถเพิ่มเส้นใต้ */
+}
+
+nav ol li a::after {
+    content: ''; /* สร้างส่วนของเส้นใต้ */
+    display: block;
+    width: 0; /* เริ่มต้นเส้นใต้ให้มีความยาวเป็น 0 */
+    height: 2px; /* กำหนดความยาวของเส้นใต้ */
+    background-color: black; /* สีของเส้นใต้ */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* เพิ่ม transition เพื่อทำให้เส้นใต้มีการเปลี่ยนแปลงอย่างนุ่มนวล */
+}
+
+nav ol li a:hover::after {
+    width: 50%; /* เมื่อเมาส์ hover ทำให้เส้นใต้ขยายเต็มระยะ */
+}
+
+
+
+
+nav .search_box{
+    display: flex;
+    margin: auto;
+    height: 35px ;
+    line-height: 35px;
+}
+nav .search_box input{
+    border: none;
+    outline: none;
+    background: white;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 20px;
+    width: 450px;
+}
+nav .search_box span{
+    color: rgb(6, 6, 6);
+    font-size: 20px;
+    background: rgb(231, 231, 231);
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+nav .search_box span:hover{
+    color: #000000;
+}
+nav .search_box span::after{
+    height: 100%;
+    width: 0%;
+    content: '';
+    background: rgb(193, 188, 188);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1 ;
+    transition: 0.3s;
+}
+
+nav .search_box span:hover::after{
+    width: 100%;
+}
+nav .bar{
+    position: relative;
+    margin: auto;
+    display: none;
+}
+nav .bar span{
+position: absolute;
+color: rgb(0, 0, 0);
+font-size: 35px;
+
+}
+input[type="checkbox"]{
+    /* -webkit-appearance: none; */
+    display: none;
+}
+
+@media screen and (max-width: 1250px){
+    nav{
+        display: block;
+        padding: 0;
+    }
+    nav .icon{
+        display: inline-block;
+        padding: 15px 30px;
+    }
+    nav .search_box{
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    nav .search_box input{
+        width: 90%;
+    }
+    nav ol{
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        height: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+    nav ol li{
+        text-align: center;
+    }
+    nav ol li a {
+        color: #000;
+        font-size: 28px;
+        padding: 25px;
+        display: block;
+    }
+    nav .bar{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 80px;
+        cursor: pointer;
+    }
+    nav .bar #times{
+        display: none;
+    }
+    #check:checked ~ nav .bar #times{
+        display: block;
+    }
+    #check:checked ~ nav .bar #bars{
+        display: none;
+    }
+    #check:checked ~ nav ol{
+        visibility: visible;
+    }
+
+}
+
+.flexbox{
+    border: #000000 solid 1px;
+    background-color: #ffffff;
+    width:90%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px
+    
+}
+.item{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: #000000 solid 1px;
+    height: 350px;
+    margin-left: 30px;
+    width: 30%;
+}
+.item-content {
+    /* display: flex; */
+    /* align-items: center; จัดข้อความให้อยู่ตรงกลางตรงกลางกับภาพ */
+}
+
+.text {
+    display: flex;
+    /* display: grid; */
+    margin-left: 100px; /* ให้ข้อความห่างจากรูปภาพทางซ้าย */
+    justify-content:space-between;
+    width: 100%;
+    
+}
+
